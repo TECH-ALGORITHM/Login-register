@@ -14,7 +14,7 @@ const Register = () => {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3001/register", { name, email, password })
+      .post("http://localhost:8000/register", { name, email, password })
       .then((result) => {
         console.log(result);
         if (result.data === "Already registered") {
