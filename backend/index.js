@@ -24,7 +24,6 @@ app.post("/register", async (req, res) => {
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-    d;
     const newUser = await FormDataModel.create({
       ...req.body,
       password: hashedPassword,
@@ -58,4 +57,7 @@ app.post("/login", async (req, res) => {
     console.error(error);
     res.status(500).json({ message: "Error logging in" });
   }
+});
+app.listen(8000, () => {
+  console.log("server is running on port 8000");
 });
